@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-dark">
+    <div class="container my-3">
+      <div class="login_parent bg-white p-4 rounded shadow">
+        <h2 class="login_heading py-3 m-0 text-center">Login</h2>
+        <form class="form py-3">
+          <div class="form-group">
+            <div class="input-group">
+              <input
+                class="form-control email px-3"
+                type="text"
+                placeholder="Email"
+                onblur="validateEmail(this.value)"
+              />
+            </div>
+            <small id="emailError" class="text-danger"></small>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <input
+                class="form-control password px-3 border-right-0"
+                type="password"
+                placeholder="Password"
+                id="pass"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text bg-transparent">
+                  <i
+                    class="fas fa-eye"
+                    id="check"
+                    onclick="togglePassword()"
+                  ></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <p class="forget text-center text-decoration-none m-0 py-2">
+            <a
+              data-toggle="modal"
+              data-target="#exampleModal"
+              class="text-decoration-none"
+              href=""
+              >Forget Password?</a
+            >
+          </p>
+          <div class="loginButton_parent py-1 text-center rounded">
+            <button class="btn login_button">Login</button>
+          </div>
+          <p class="notAccount py-2 text-center m-0">
+            Don't have an account?<span class="px-1 text-primary">Signup</span>
+          </p>
+          <div class="text-center pb-3">
+            <div class="paragraph text-center position-relative">
+              <span>Or</span>
+            </div>
+
+            <button class="btn facebook w-100 mt-3 py-2 text-center">
+              <span class="text-start">
+                <i
+                  class="fab fa-facebook-f facebook_icon px-2 py-1 text-start"
+                ></i>
+              </span>
+              <span class="text-center"> Login with Facebook </span>
+            </button>
+            <button class="btn google border w-100 mt-3 py-2">
+              <span>
+                <i class="fab fa-google"></i>
+              </span>
+              <span class="text-center"> Login with Google </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="forgetPasswordModalLabel">
+              Forget Password
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Enter your email to reset your password:</p>
+
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                  class="form-control email px-3"
+                  type="text"
+                  id="resetEmail"
+                  placeholder="Email"
+                  onblur="validateEmail(this.value)"
+                />
+              </div>
+              <small id="emailError" class="text-danger"></small>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="resetPassword()"
+            >
+              Reset Password
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS and Popper.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="login.js"></script>
+  </body>
+</html>
