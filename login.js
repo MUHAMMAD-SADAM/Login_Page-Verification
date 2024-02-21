@@ -27,4 +27,3 @@ function togglePassword() {
     check.classList.add("fa-eye");
   }
 }
-//
